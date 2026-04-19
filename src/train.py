@@ -4,6 +4,10 @@ from sklearn.metrics import accuracy_score
 
 def train(model, train_loader, test_loader, loss_fn, optimizer, epochs, device):
     """Train a model for a specified number of epochs"""
+    
+    torch.manual_seed(42)
+    torch.cuda.manual_seed(42)
+    
     print("Training has started...")
     for epoch in range(epochs):
         model.train()
